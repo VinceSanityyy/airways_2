@@ -12,6 +12,13 @@ Vue.use(VueRouter)
 import VueRouter from 'vue-router'
 import Vue from 'vue'
 
+
+
+import DatatableFactory from 'vuejs-datatable/dist/vuejs-datatable.esm.js';
+Vue.use(DatatableFactory);
+
+
+
 //vform package
 import { Form, HasError, AlertError } from 'vform'
 
@@ -22,7 +29,7 @@ Vue.component(AlertError.name, AlertError)
 
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
+Vue.component('reserve-component', require('./components/Reservation/Reservation.vue').default);
 
 
 const routes = [
@@ -39,5 +46,5 @@ const router = new VueRouter({
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
 });

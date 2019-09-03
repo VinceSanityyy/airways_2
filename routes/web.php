@@ -11,14 +11,37 @@
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.airways');
 });
 
+Route::get('/flightSearch', 'FlightsController@searchFlights')->name('flightSearch');
+
+Route::get('/confirmdetails', 'FlightsController@confirmDetails')->name('confirmdetails');
+
 Auth::routes();
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-// route::resource('');
-Route::get('{path}','HomeController@index')->where( 'path', '([A-z]+)?' );
+// Route::get('{path}','HomeController@index')->where( 'path', '([A-z]+)?' );
+
+
+//dave
+
+Route::get('/payment', function () {
+    return view('payment');
+});
+Route::get('/reciept', function () {
+    return view('reciept');
+});
+Route::get('/termsofuse', function () {
+    return view('payment.tems');
+});
+
+Route::resource('payment','TempPaymentController');
+Route::resource('reciept','TempRecieptControler');
+

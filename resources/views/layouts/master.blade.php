@@ -130,7 +130,7 @@
   <div class="content-wrapper">
       <section class="content">
 
-        <router-view></router-view>
+        <reserve-component></reserve-component>
 
       </section>
   </div>
@@ -284,6 +284,9 @@
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('layout/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<!-- DataTables -->
+<script src="{{asset('layout/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('layout/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
 <!-- Morris.js charts -->
 <script src="{{asset('layout/bower_components/raphael/raphael.min.js')}}"></script>
 <script src="{{asset('layout/bower_components/morris.js/morris.min.')}}js"></script>
@@ -318,3 +321,4 @@
 
 </body>
 </html>
+
