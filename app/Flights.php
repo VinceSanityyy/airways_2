@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Flights extends Model
 {
+
+    protected $primaryKey = 'flight_id';
     public $timestamps = false;
     public $fillable = [
        'flight_id','flight_schedule','flight_arrival'
