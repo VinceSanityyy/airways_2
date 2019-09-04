@@ -14,7 +14,7 @@ class TempFlightTableSeeder extends Seeder
     {
         for($i=0; $i<5; $i++){
             TempFlight::create([
-                'paymentID'  =>rand(1,10),
+                'paymentID'  =>1,
                 'customerID'  =>rand(1,10),
                 'planeID'  =>rand(1,10),
                 'reservationDate'  =>Carbon::parse('2019-09-06'),
