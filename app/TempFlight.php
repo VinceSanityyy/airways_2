@@ -8,5 +8,5 @@ class TempFlight extends Model
 {
     protected $table= 'temp_flights';
     public $primaryKey ='FlightID';
-    public $timestamps=true;
+    public $timestamps=false;
 }
