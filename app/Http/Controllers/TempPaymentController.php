@@ -20,7 +20,7 @@ class TempPaymentController extends Controller
         //$posts=Post::where('PaymentID','1')->take()->get();
         $posts=TempFlight::where('paymentID','1')->get();
         // $posts=Flight::where('paymentID','1')->get();
-        $flight=TempFlight::where('PaymentID','1')->take(1)->get();
+        $flight=TempFlight::where('paymentID','1')->take(1)->get();
 
       //$posts= DB::select('Select * from posts');
       return View::make('payment.payment')
@@ -59,7 +59,7 @@ class TempPaymentController extends Controller
     \Stripe\Stripe::setApiKey('sk_test_Q2kdLWGxvI9FvT92ePUG4mLS00JKah2okI');
     $posts=TempFlight::where('paymentID','1')->get();
         // $posts=Flight::where('paymentID','1')->get();
-        $flight=TempFlight::where('PaymentID','1')->take(1)->get();
+        $flight=TempFlight::where('paymentID','1')->take(1)->get();
 
       //$posts= DB::select('Select * from posts');
 
