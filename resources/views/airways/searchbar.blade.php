@@ -82,7 +82,7 @@
                    </div>
                 </div>
                 <div class="col-md-6 col-lg form-group">
-                   <button class="btn btn-primary btn-block" type="submit">Search</button>
+                   <a href="/hotelreservation1" class="btn btn-primary btn-block">Search</a>
                 </div>
              </div>
           </form>

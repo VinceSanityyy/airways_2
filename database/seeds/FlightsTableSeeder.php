@@ -18,10 +18,10 @@ class FlightsTableSeeder extends Seeder
             Flights::create([
                 'flight_schedule' => Carbon::parse('2019-09-05'),
                 'flight_arrival' =>  Carbon::parse('2019-09-06'),
-                'terminal' => 'Davao',
-                'flight_country_from' => 'Davao',
-                'flight_country_to' => 'Manila',
-                'plane_id' => rand(1,15),
+                'alias' => Str::random(10),
+                'flight_country_from' => 'Cebu',
+                'flight_country_to' => 'Tacloban',
+                'plane_id' => rand(16,20),
                 'price' => rand(5000, 2000),
                 'status' => rand(1,0)
             ]);

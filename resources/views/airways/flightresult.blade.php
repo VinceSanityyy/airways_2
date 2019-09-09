@@ -1,9 +1,21 @@
-@include('layouts.styles')
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+    <title>ORO Airways</title>
+    <meta name="description" content="Quickai - Recharge & Bill Payment, Booking HTML5 Template">
+    <meta name="author" content="harnishdesign.net">
+
+</head>
 @include('layouts.header')
+@include('layouts.styles')
+@include('layouts.scripts')
+
+
 <div id="content">
-   <div id="preloader">
-      <div data-loader="dual-ring"></div>
-   </div>
+
+   <br><br>
    <div class="container">
       <button class="btn btn-primary btn-sm" onclick="myFunction()">Toggle Search</button>
       <br><br>
@@ -19,12 +31,13 @@
                Search Results
             </div>
 
-            <div class="text-1 bg-light-3 border border-right-0 border-left-0 py-2 px-3">
+            <div class="text-1 bg-light-3 border border-right-0 border-left-0 py-2 px-3" >
                <div class="row">
-                  <div class="col col-sm-2 text-center"><span class="d-none d-sm-block">Flight Number</span></div>
+                  <div class="col col-sm-2 text-center">Flight </div>
                   <div class="col col-sm-2 text-center">Departure</div>
-                  <div class="col-sm-2 text-center d-none d-sm-block">Arrival</div>
+                  <div class="col col-sm-2 text-center">Arrival</div>
                   <div class="col col-sm-2 text-center">Price</div>
+                  <div class="col col-sm-2 text-center">Seats </div>
                </div>
             </div>
             <div class="flight-list ">
@@ -36,7 +49,7 @@
 
                   <div class="row align-items-center flex-row pt-4 pb-2 px-3">
                      <div class="col col-sm-2 text-center time-info">
-                        <span class="text-4">{{$data->flight_id}}</span>
+                        <span class="text-4" style="text-transform: uppercase;">{{$data->alias}}</span>
                      </div>
                      <div class="col col-sm-2 text-center time-info">
                         <span class="text-4">{{$data->flight_schedule}}</span> <small class="text-muted d-none d-sm-block">{{$data->flight_country_from}}</small>
@@ -45,19 +58,25 @@
                         <span class="text-4">{{$data->flight_arrival}}</span> <small class="text-muted d-none d-sm-block">{{$data->flight_country_to}}</small>
                      </div>
                      <div class="col col-sm-2 text-center text-dark text-6 price">₱ {{$data->price}}</div>
-                     <div class="col-sm-2 text-center d-none d-sm-block time-info">
-                        <a href="#   "> <span class="text-3">Flight Details</span> <small class="text-muted d-none d-sm-block"></small> </a>
-                     </div>
+
+                     <div class="col col-sm-2 text-center text-dark text-6 price">{{$data->seats_available}}</div>
                      <div class="col-12 col-sm-2 text-center ml-auto btn-book">
-                        <a href="{{url("/confirmdetails")}}" class="btn btn-sm btn-primary"><i class="fas fa-shopping-cart d-block d-lg-none"></i>
-                        <span class="d-none d-lg-block">Book</span></a>
+                     <a href="/confirmdetails/{{$data->flight_id}}" class="btn btn-sm btn-primary">
+                        <span class="d-none d-block">Book</span></a>
+
                      </div>
+
                   </div>
                   @endforeach
                </div>
             </div>
          </div>
+         <br>
+         <div class="pagination text-center">
+                {{ $flights->links() }}
+            </div>
       </div>
+
    </div>
 </div>
 
@@ -73,4 +92,4 @@
    }
 </script>
 @include('layouts.footer')
-@include('layouts.scripts')
+

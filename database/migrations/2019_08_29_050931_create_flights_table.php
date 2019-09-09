@@ -17,12 +17,19 @@ class CreateFlightsTable extends Migration
             $table->bigIncrements('flight_id');
             $table->string('flight_schedule');
             $table->string('flight_arrival');
-            $table->string('terminal');
+            $table->string('alias');
             $table->string('flight_country_from');
             $table->string('flight_country_to');
-            $table->integer('plane_id');
+            $table->bigInteger('plane_id')->unsigned();
             $table->double('price');
+            $table->integer('seats_available');
             $table->string('status');
+        });
+
+        Schema::table('flights', function($table) {
+            $table->foreign('plane_id')
+                  ->references('id')->on('planes')
+                  ->onDelete('cascade');
         });
     }
 

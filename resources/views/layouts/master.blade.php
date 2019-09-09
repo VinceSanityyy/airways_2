@@ -98,11 +98,11 @@
         <li class="treeview">
                     <router-link to="/reservation" > <i class="fa fa-ticket "></i>  <span>Reservation</span> </router-link>
             </li>
-            <li class="treeview">
-
+        <li class="treeview">
+            <router-link to="/planelist" > <i class="fa fa-plane "></i>  <span>Planes</span> </router-link>
         </li>
         <li class="treeview">
-
+            <router-link to="/flightList" > <i class="fa fa-plane "></i>  <span>Flights</span> </router-link>
         </li>
 
         </li>
@@ -130,7 +130,7 @@
   <div class="content-wrapper">
       <section class="content">
 
-        <reserve-component></reserve-component>
+        <router-view></router-view>
 
       </section>
   </div>

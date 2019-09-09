@@ -29,11 +29,14 @@ Vue.component(AlertError.name, AlertError)
 
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('reserve-component', require('./components/Reservation/Reservation.vue').default);
+Vue.component('reserve-component', require('./components/Reservation.vue').default);
 
 
 const routes = [
-    { path: '/reservation', component: require('./components/Reservation/Reservation.vue').default },
+    { path: '/reservation', component: require('./components/Reservation.vue').default },
+    { path: '/planelist', component: require('./components/Planes.vue').default },
+    { path: '/flightlist', component: require('./components/Flights.vue').default },
+    { path: '*', component: require('./components/ExampleComponent.vue').default}
 
   ]
 

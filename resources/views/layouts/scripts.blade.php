@@ -1,11 +1,11 @@
 <!-- Script -->
-<script src="airways/vendor/jquery/jquery.min.js"></script>
-<script src="airways/vendor/jquery-ui/jquery-ui.min.js"></script>
-<script src="airways/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="airways/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="airways/vendor/bootstrap-spinner/bootstrap-spinner.js"></script>
-<script src="airways/vendor/daterangepicker/moment.min.js"></script>
-<script src="airways/vendor/daterangepicker/daterangepicker.js"></script>
+<script src="{{asset('airways/vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('airways/vendor/jquery-ui/jquery-ui.min.js')}}"></script>
+<script src="{{asset('airways/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('airways/vendor/owl.carousel/owl.carousel.min.js')}}"></script>
+<script src="{{asset('airways/vendor/bootstrap-spinner/bootstrap-spinner.js')}}"></script>
+<script src="{{asset('airways/vendor/daterangepicker/moment.min.js')}}"></script>
+<script src="{{asset('airways/vendor/daterangepicker/daterangepicker.js')}}"></script>
 <script>
    $(function() {
    'use strict';
@@ -49,4 +49,4 @@
    });
    });
 </script>
-<script src="airways/js/theme.js"></script>
+<script src="{{asset('airways/js/theme.js')}}"></script>
