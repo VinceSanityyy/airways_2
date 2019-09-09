@@ -38,26 +38,25 @@ Route::post('create-payment', function () {
     $payer = new Payer();
     $payer->setPaymentMethod("paypal");
     $item1 = new Item();
-    $item1->setName('Ground Coffee 40 oz')
-        ->setCurrency('USD')
+    $item1->setName('Ticket (Adult)')
+        ->setCurrency('PHP')
         ->setQuantity(1)
-        ->setSku("123123") // Similar to `item_number` in Classic API
-        ->setPrice(7.5);
+        ->setSku("123123") // Similar to item_number in Classic API
+        ->setPrice(1500);
     $item2 = new Item();
-    $item2->setName('Granola bars')
-        ->setCurrency('USD')
-        ->setQuantity(5)
-        ->setSku("321321") // Similar to `item_number` in Classic API
-        ->setPrice(2);
+    $item2->setName('Baggage')
+        ->setCurrency('PHP')
+        ->setQuantity(1)
+        ->setSku("321321") // Similar to item_number in Classic API
+        ->setPrice(100);
     $itemList = new ItemList();
     $itemList->setItems(array($item1, $item2));
     $details = new Details();
-    $details->setShipping(1.2)
-        ->setTax(1.3)
-        ->setSubtotal(17.50);
+    $details->setTax(100)
+        ->setSubtotal(1600);
     $amount = new Amount();
-    $amount->setCurrency("USD")
-        ->setTotal(20)
+    $amount->setCurrency("PHP")
+        ->setTotal(1700)
         ->setDetails($details);
     $transaction = new Transaction();
     $transaction->setAmount($amount)
@@ -87,6 +86,7 @@ Route::post('create-payment', function () {
     }
     return $payment;
 });
+
 Route::post('execute-payment', function (Request $request) {
     $apiContext = new \PayPal\Rest\ApiContext(
         new \PayPal\Auth\OAuthTokenCredential(
